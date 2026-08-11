@@ -12,6 +12,9 @@ test('Login and click the highest priced product', async ({ page }) => {
     // Navigate to application
     await page.goto('https://www.saucedemo.com/');
 
+    // Login fields visibility check
+    expect(await loginPage.checkloginFieldsVisibility()).toBe(true);
+
     // Login
     await loginPage.login();
     
