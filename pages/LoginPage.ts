@@ -13,6 +13,13 @@ export class LoginPage {
         this.loginButton = page.locator('#login-button');
     }
 
+    async checkloginFieldsVisibility() {
+        await this.username.isVisible();
+        await this.password.isVisible();
+        await this.loginButton.isVisible();
+        return true;
+    }
+
     async login() {
         await this.username.fill('standard_user');
         await this.password.fill('secret_sauce');
